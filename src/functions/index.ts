@@ -13,3 +13,5 @@ export function parseHtmlEntities(str:string) {
     txt.innerHTML = str;
     return txt.value;
 }
+
+export function booleanSum  (values: boolean[]) {return values.reduce((total: number, value: boolean) => +value + total, 0)}
