@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { Questions } from "../../api/getQuestions"
+import { AnswerProps} from "../../types"
 import { Button, Heading, Text } from "../../components"
 import { StoreContext } from "../../context"
 import { answerSignal, parseHtmlEntities, booleanSum } from "../../functions"
@@ -24,7 +24,6 @@ export default function Results() {
             <Heading>
                 You scored <br /> {booleanSum(answers)}/10
             </Heading>
-
             <AnswerList />
             <Button onClick={clickHandler}>PLAY AGAIN?</Button>
         </>
@@ -38,8 +37,7 @@ const AnswerList = () => {
     return (
         <div className="grid grid-cols-8 p-2 w-full text-left md:w-3/4 text-gray-500">
             {questions.map((question, index) => 
-                <AnswerResult question={question} index={index}></AnswerResult>
-            
+                <AnswerResult question={question} index={index}></AnswerResult> 
             )}
         </div>
     )
@@ -48,11 +46,6 @@ const AnswerList = () => {
 
 
 
-type AnswerProps = {
-    question: Questions;
-    index: number
-
-}
 
 const AnswerResult = ({ question, index }: AnswerProps) => {
     const { answers } = useContext(StoreContext)

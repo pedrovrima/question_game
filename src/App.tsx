@@ -1,14 +1,14 @@
 import Routes from "./pages"
 import { BrowserRouter } from "react-router-dom";
-import Context from './context';
+import ContextStore from './context';
 
 function App() {
   return (
     <div >
       <BrowserRouter>
-        <Context>
+        <ContextStore>
           <Routes />
-        </Context>
+        </ContextStore>
       </BrowserRouter>
     </div>
   );

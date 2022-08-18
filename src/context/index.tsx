@@ -1,23 +1,10 @@
 import React, { useState, } from "react"
 import getQuestions from "../api/getQuestions";
-import { Questions } from "../api/getQuestions"
-
-export type StoreType = {
-    questions: Questions[];
-    currentQuestionIndex: number;
-    error: boolean;
-    answers: boolean[];
-    loadQuestions: Function;
-    nextQuestion: (answer: string) => void;
-    resetContext: Function;
-    setError: Function;
-
-}
+import { Questions, StoreType, StoreProps} from "../types"
 
 
-type StoreProps = {
-    children: React.ReactNode;
-}
+
+
 
 export const StoreContext = React.createContext<StoreType>({ questions: [], error: false, currentQuestionIndex: 0, answers: [], loadQuestions: () => { }, nextQuestion: () => { }, resetContext: () => { }, setError: () => { } })
 
