@@ -6,6 +6,7 @@ module.exports = {
   theme: {
 
       minHeight: {
+        'screen':'100vh',
         '96': '24rem',
         '24': '96px',
       }
