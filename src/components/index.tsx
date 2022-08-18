@@ -42,7 +42,7 @@ export function TextSmall({children}:ComponentProps){
 
 export function GameCard({children}:ComponentProps){
     return(
-        <div className="p-12 my-8 lg:mx-2 w-full  min-h-96 border-4  border-black flex flex-col justify-between ">
+        <div className="p-6 md:p-12 my-8 lg:mx-2 w-full  min-h-96 border-4  border-black flex flex-col justify-between ">
             {children}
         </div>
     )
