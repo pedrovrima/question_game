@@ -26,3 +26,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.\
 
+
+## Project Specifications
+
+This project was created using the Create React App boilerplate and used the following major libraries:
+
+- TailWindCSS 
+
+The project is stored on [this repo](https://github.com/pedrovrima/question_game).
