@@ -4,7 +4,7 @@ This app allows the user to answer ten true-or-false questions and check their s
 
 The design follows mostly the minimalist wireframes provided, with a few changes to improve user experience. 
 
-You can check the app at []
+You can check the app in [this link](https://trivia-app-pmartins.vercel.app/).
 
 ## Running the project
 
