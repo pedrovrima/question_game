@@ -1,18 +1,23 @@
-import React, { useEffect, useContext } from "react"
+import React, { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { Questions } from "../../api/getQuestions"
 import { Button, Heading, Text } from "../../components"
 import { StoreContext } from "../../context"
-import { answerSignal,parseHtmlEntities } from "../../functions"
+import { answerSignal, parseHtmlEntities } from "../../functions"
 
 const sums = (values: boolean[]) => values.reduce((total: number, value: boolean) => +value + total, 0)
 
 
 export default function Results() {
-    const { questions, answers,resetContext } = useContext(StoreContext)
+    const { questions, answers, resetContext } = useContext(StoreContext)
     const navigate = useNavigate()
 
+
+    const clickHandler = () => {
+        resetContext()
+        navigate("/")
+    }
 
     return (
         <>
@@ -20,9 +25,9 @@ export default function Results() {
             <Heading>
                 You scored <br/> {sums(answers)}/10
             </Heading>
-            
+
             <AnswerList answers={answers} questions={questions}></AnswerList>
-            <Button onClick={()=>{resetContext();navigate("/")}}>PLAY AGAIN?</Button>
+            <Button onClick={clickHandler}>PLAY AGAIN?</Button>
         </>
     )
 }
@@ -36,7 +41,6 @@ type AnswerListProps = {
 
 const AnswerList = (props: AnswerListProps) => {
     const { answers, questions } = props
-
     return (
         <div className="grid grid-cols-8 p-2 w-full text-left md:w-3/4 text-gray-500">
             {questions.map((question, index) => (
@@ -57,3 +61,6 @@ const AnswerList = (props: AnswerListProps) => {
     )
 
 }
+
+
+

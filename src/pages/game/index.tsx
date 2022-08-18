@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react"
+import {  useContext } from "react"
 import { Button, GameCard, Heading, Text, TextSmall } from "../../components"
 import { StoreContext } from "../../context"
 import { parseHtmlEntities } from "../../functions"
@@ -8,7 +8,7 @@ export default function Loading() {
 
 
     const questionText = parseHtmlEntities(questions[currentQuestionIndex].question)
-
+    const progressText = `${currentQuestionIndex + 1} of ${questions.length}`
 
     return (
         <div className="w-full flex flex-col items-center">
@@ -24,7 +24,7 @@ export default function Loading() {
                     </div>
                 </GameCard>
 
-                <TextSmall>{`${currentQuestionIndex + 1} of ${questions.length}`}</TextSmall>
+                <TextSmall>{progressText}</TextSmall>
             </div>
         </div>
     )
